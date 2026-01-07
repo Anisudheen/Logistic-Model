@@ -6,12 +6,9 @@ import os
 
 @st.cache_resource
 def load_model_and_encoder():
-    base_dir = os.path.dirname(__file__)
-
-    model = joblib.load(os.path.join(base_dir, "titanic_model.pkl"))
-    le_sex = joblib.load(os.path.join(base_dir, "sex_encoder.pkl"))
-    feature_names = joblib.load(os.path.join(base_dir, "feature_names.pkl"))
-
+    model = joblib.load("Logistic_project/titanic_model.pkl")
+    le_sex = joblib.load("Logistic_project/sex_encoder.pkl")
+    feature_names = joblib.load("Logistic_project/feature_names.pkl")  # ["Pclass","Sex","Age","SibSp","Parch","Fare"]
     return model, le_sex, feature_names
 
 def main():
